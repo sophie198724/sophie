@@ -1,0 +1,55 @@
+{template "mobile","header"}
+
+<div style="padding:8px 10px; clear:both;">
+               <div class="lmtys"><span style="font-size:14px;">{$CATEGORYS[$parentid][catname]}&gt;{$catname} </span></div>
+  <ul class="wzbtlb" style="padding-top:10px;">
+  <?php
+  if($catid==234)
+  {
+  ?>
+   {pc:get sql="select * from v9_page where catid=262"}
+   {loop $data $r}
+     {$r['content']}
+   {/loop}
+   {/pc}
+  
+ <?php
+  }else
+  {
+ ?>
+  
+  <div>
+    <img src="/statics/images/{$catid}.jpg" width="100%" />
+  </div>
+  
+ {pc:mobile action="lists" catid="$catid" order="id DESC" thumb="" moreinfo="1"  return="info" num="3" }
+ <?php $i=1; ?>
+    {loop $info $v}
+     <div class="five_{$i}"><a href="{show_url($v[catid],$v[id])}"><img src="{$v[thumb]}" style="width: 100%"></a></div>
+     <h3 style="text-align:center">{$v['title']}</h3>
+ <?php $i++; ?>
+<br />
+<br />
+
+   {/loop}
+
+   {/pc}
+  <div style=" border-bottom:#CCC solid 2px; margin-bottom:10px; background:#3D107B; padding:5px; color:#FFF">相关推荐 <a href="{$CATEGORYS[$catid][url]}&t=more" style="color:#FFF; font-family:'Arial Black', Gadget, sans-serif; float:right; ">More>></a></div>
+  {pc:mobile action="lists" catid="$catid" num="8" order="id DESC" return="info" page=$page}
+   {loop $info $v}
+      <li><span style="float:left"><img src="images/index_13.png" width="6" height="9"> <a href="{show_url($v[catid],$v[id])}">{str_cut($v['title'],36,'')}</a></span>{date("Y-m-d",$v[inputtime])}</li>
+	  {/loop}
+	   <div class="pages">{$pages}</div>
+ 
+ 	{/pc}
+ <?php
+   }
+ ?>
+  </ul>
+  
+               <div style="clear:both;"></div>
+  <!--     <DIV id="an_more_${viewid}" class="more" ><a href="javascript:void(0);" onClick="javascript:get_more_${viewid}();">点击查看更多</a></DIV> -->
+<!-- <DIV id="an_load_${viewid}" class="more" style="display:none;">正在加载......</DIV> -->
+</div>
+
+{template "mobile","footer"}

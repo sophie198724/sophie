@@ -1,0 +1,22 @@
+﻿{template "mobile","header"}
+
+<div style="padding:8px 10px; clear:both;">
+           <div class="lmtys"><span style="font-size:14px;">{$CATEGORYS[$parentid][catname]}&gt;{$catname} </span></div>
+  <ul class="wzbtlb" style="padding-top:10px;">
+		  {pc:mobile action="lists" catid="$catid" num="8" order="id DESC" return="info" page=$page}
+	
+			{loop $info $v}
+		
+			 <li style="float:left; width:42%; padding: 4%; text-align:center;"><img src="{$v[thumb]}" width="100%" height="110"><br> {str_cut($v['title'],30,'')}</li>		  
+		  {/loop}
+	
+	{/pc}
+
+  </ul>
+             
+</div>
+     <div style="clear:both;"></div>
+  <div class="pages">{$pages}</div>
+
+
+{template "mobile","footer"}

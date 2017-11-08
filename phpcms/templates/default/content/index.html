@@ -1,0 +1,41 @@
+{template "content","header"}
+
+<!--导航结束-->
+<div class="wrapper" >
+<style>
+	.footer{
+	color: #666;
+    line-height: 24px;
+    width: 920px;
+    margin: auto;
+    text-align: center;
+    padding: 12px 0;
+    margin-top: 52px;
+    border-top: 1px solid #e5e5e5;
+	}
+	.col2 p{
+		margin-bottom: 0;
+	}
+</style>
+
+
+<div id="full-screen-slider">
+	<ul id="slides">
+	  {pc:get sql="select * from v9_poster where spaceid=12"}
+        {loop $data $r}
+        <?php
+         $str = array();
+         $str =  string2array($r['setting']);
+        ?>
+        <li style="background:url({$str[1]['imageurl']}) no-repeat center top"></li>
+        {/loop}
+        {/pc}
+	</ul>
+</div>
+
+
+
+</div>
+{template "content","footer"}
+</body>
+</html>

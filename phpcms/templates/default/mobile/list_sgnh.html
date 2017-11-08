@@ -1,0 +1,70 @@
+{template "mobile","header"}
+
+<div style="padding:8px 10px; clear:both;">
+               <div class="lmtys"><span style="font-size:14px;">{$CATEGORYS[$parentid][catname]}&gt;{$catname} </span></div>
+  
+   <img src="/statics/images/a236_00.gif" width="100%" />
+            <?php
+    $i = 1;
+?>
+
+             {pc:mobile action="lists" catid="$catid" order="listorder desc" thumb="" moreinfo="1"  num="15" }
+            
+            <?php
+            $data = array_chunk($data,5);
+            ?>
+            {loop $data $r}
+            <?php
+$odd = $i % 2 == 0 ? "odd" : "even";
+?>
+                <?php
+                $j = 1;
+                ?>
+               <img src="/statics/images/a236_0<?php echo $i; ?>.gif" width="100%" />
+                {loop $r $rr}
+                <div class="three_{$j} b">
+                 <?php
+                  if($j==1)
+                  {
+                 ?>
+                <a href="{show_url($rr[catid],$rr[id])}"><img src="{$rr[thumb]}" style="width: 100%"></a>
+                  <a href="{show_url($rr[catid],$rr[id])}"><span style="margin-left: 50%; color:black;">{$rr[title]}</span></a>
+                
+                <?php
+                 }
+                 else
+                 {
+                ?>
+                 <a href="{show_url($rr[catid],$rr[id])}"><img src="{$rr[thumb]}" style="width:100%; float:left"></a>
+                   <a href="{show_url($rr[catid],$rr[id])}"><span style="margin-left: 50%; color:black;">{$rr[title]}</span></a>
+                
+                <?php
+                
+                  }
+                ?>
+                </div>
+                <?php
+                    $j++;
+                ?>
+                {/loop}
+                <?php
+                    $i++;
+                ?>
+            {/loop}
+            {/pc}
+<br />
+<br />
+
+  <div style=" border-bottom:#CCC solid 2px; clear:both; margin-bottom:10px; background:#3D107B; padding:5px; color:#FFF">相关推荐 <a href="{$CATEGORYS[$catid][url]}&t=more" style="color:#FFF; font-family:'Arial Black', Gadget, sans-serif; float:right; ">More>></a></div>
+    <ul class="wzbtlb" style="padding-top:10px;">
+  {pc:mobile action="lists" catid="$catid" num="8" order="id DESC" return="info" page=$page}
+   {loop $info $v}
+      <li><span style="float:left"><img src="images/index_13.png" width="6" height="9"> <a href="{show_url($v[catid],$v[id])}">{str_cut($v['title'],36,'')}</a></span>{date("Y-m-d",$v[inputtime])}</li>
+	  {/loop}
+	   <div class="pages">{$pages}</div>
+ 
+ 	{/pc}
+            </div>
+</div>
+
+{template "mobile","footer"}

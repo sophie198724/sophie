@@ -1,0 +1,15 @@
+{template "wap","min_header"}
+<div class="content">
+	  <h2>{$TYPE[$typeid]['typename']}</h2>
+	  <h6>{date('Y-m-d',strtotime($inputtime))} </h6>
+{pc:get sql="select content from v9_news_data where id=$id" return="data"}
+{loop $data $key $val}
+	  <p class="article mt10">
+           
+		{str_cut(strip_tags($v['content']))}
+			
+      </p>
+{/loop}
+{/pc}	  
+	</div>
+{template "wap","min_footer"}

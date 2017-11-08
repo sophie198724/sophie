@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" charset="utf-8">
+<meta name = "viewport" content = "width=device-width, minimum-scale=1, maximum-scale=1">
+<title>{$mobile['sitename']}</title>
+<meta name="keywords" content="{$mobile['keywords']}">
+ <meta name="description" content="{$mobile['description']}">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}rester.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}index.css"/>
+		<link type="text/css" href="{CSS_PATH}style1.css" rel="stylesheet"/>
+		<script src="{JS_PATH}jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="{JS_PATH}jquery.event.drag-1.5.min.js"></script>
+       <script type="text/javascript" src="{JS_PATH}jquery.touchSlider.js"></script>
+	</head>
+	<body>
+    <style>
+     
+    
+    </style>
+		<div class="logo">
+			<a href="index.html">
+				<img src="{IMG_PATH}logo.png"/>
+			</a>
+			<a href="index.html">
+			<img src="{IMG_PATH}home.png" class="home"/>
+			</a>
+		</div>
+		<div class="bannar " > 
+			
+
+		<div class="main_visual">
+	    <div class="flicking_con">
+            {pc:get sql="select * from v9_poster where spaceid=11" return="data" }
+            {loop $data $n $r}
+            <a href="#"><?php echo $n+1; ?></a>
+            {/loop}
+            {/pc}
+	    </div>
+	<div class="main_image">
+		<ul>
+          {pc:get sql="select * from v9_poster where spaceid=11" return="data" }
+          {loop $data $n $r}
+             <?php
+         $str = array();
+         $str =  string2array($r['setting']);
+        ?>
+			<li><span class="img_{$n+1}"><a href="{$str[1]['linkurl']}"><img src="{$str[1]['imageurl']}"/></a></span></li>
+          {/loop}
+          {/pc}
+		</ul>
+		<a href="javascript:;" id="btn_prev"></a>
+		<a href="javascript:;" id="btn_next"></a>
+	</div>
+</div>
+
+		</div>
+		<div class="content"  id="content">
+			<div class="row clear">
+				<div class="box">
+					<a href="#">
+					<img src="{IMG_PATH}01.png"/>
+					<p>集团概况</p>
+					</a>
+				</div>
+				<div class="box ">
+					<a href="#">
+					<img src="{IMG_PATH}02.png"/>
+					<p>集团事业</p>
+					</a>
+				</div>
+				<div class="box">
+					<a href="#">
+					<img src="{IMG_PATH}03.png"/>
+					<p>集团党建</p>
+					</a>
+				</div>
+			</div>
+			<div class="content-box ">
+				<ul class="hide">
+					<li>中信蓝海项目管理
+					<ul class="clear">
+						 {loop subcate(112)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+						{loop subpage(112)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+					<li>重资集团（陕西）有限公司
+					<ul class="clear">
+					   {loop subcate(114)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+						{loop subpage(114)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+					</li>
+					<li>同乘设计（陕西）有限公司
+					<ul class="clear">
+					   {loop subcate(116)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+						{loop subpage(116)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+					<li>陕西绿草地园林绿化
+					<ul class="clear">
+					    {loop subcate(197)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+						{loop subpage(187)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+					<li>榆林青创管理咨询
+					<ul class="clear">
+					 {loop subcate(82)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+						{loop subpage(82)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+					<li>春禾绿科现代农业
+					<ul class="clear">
+					 {loop subcate(191)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+						{loop subpage(191)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+				</ul>
+				<ul class="hide">
+					<li>青春党建
+					<ul class="clear">
+					 {loop subcate(206)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+						{loop subpage(206)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+					<li>共青团委
+					<ul class="clear">
+						 {loop subcate(207)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+						{loop subpage(207)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+					<li>工会
+					<ul class="clear">
+						  {loop subpage(208)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}	
+						 {loop subcate(208)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+					<li>妇委会
+					<ul class="clear">
+				      {loop subpage(209)  $s}
+					    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}	
+						{loop subcate(209)  $s}
+						<li> <a href="{$s[url]}">{$s[catname]}</a></li>
+						{/loop}
+					</ul>
+				    <span>+</span>
+					</li>
+				</ul>
+			    <ul class="hide">
+                    {loop subcate(96)  $s}
+                    <li> <a href="{$s[url]}" >{$s[catname]}</a></li>
+                    {/loop}
+                    {loop subpage(96)  $s}
+                    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+                    {/loop}
+				</ul>
+			
+			</div>
+			<div class="row clear">
+				<div class="box">
+					<a href="#">
+					<img src="{IMG_PATH}04.png"/>
+					<p>集团新闻</p>
+					</a>
+				</div>
+				<div class="box ">
+					<a href="#">
+					<img src="{IMG_PATH}05.png"/>
+					<p>人才招聘</p>
+					</a>
+				</div>
+				<div class="box">
+					<a href="#">
+					<img src="{IMG_PATH}06.png"/>
+					<p>联系我们</p>
+					</a>
+				</div>
+			</div>
+			<div class="content-box ">
+				 <ul class="hide">
+				    {loop subcate(144)  $s}
+                    <li> <a href="{$s[url]}">{$s[catname]}</a></li>
+                    {/loop}
+				</ul>
+			</div>	
+		</div>
+	     <footer>
+	     	<ul>
+	     		<li>地址：陕西西安曲江新区雁南五路曲江影视大厦10层</li>
+	     		<li>邮编：710061</li>
+	     		<li>电话：029-68206165(总机)</li>
+	     		<li>传真：029-68206165</li>
+	     		<li>email：zxlhjt@zxlh.asia</li>
+	     		<img src="{IMG_PATH}weixin.png"/>
+	     	</ul>
+	     </footer>
+	</body>
+	<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".main_visual").hover(function(){
+		$("#btn_prev,#btn_next").fadeIn()
+	},function(){
+		$("#btn_prev,#btn_next").fadeOut()
+	});
+	
+	$dragBln = false;
+	
+	$(".main_image").touchSlider({
+		flexible : true,
+		speed : 200,
+		btn_prev : $("#btn_prev"),
+		btn_next : $("#btn_next"),
+		paging : $(".flicking_con a"),
+		counter : function (e){
+			$(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+		}
+	});
+	
+	$(".main_image").bind("mousedown", function() {
+		$dragBln = false;
+	});
+	
+	$(".main_image").bind("dragstart", function() {
+		$dragBln = true;
+	});
+	
+	$(".main_image a").click(function(){
+		if($dragBln) {
+			return false;
+		}
+	});
+	
+	timer = setInterval(function(){
+		$("#btn_next").click();
+	}, 5000);
+	
+	$(".main_visual").hover(function(){
+		clearInterval(timer);
+	},function(){
+		timer = setInterval(function(){
+			$("#btn_next").click();
+		},5000);
+	});
+	
+	$(".main_image").bind("touchstart",function(){
+		clearInterval(timer);
+	}).bind("touchend", function(){
+		timer = setInterval(function(){
+			$("#btn_next").click();
+		}, 5000);
+	});
+	
+});
+</script>
+	<script src="{JS_PATH}index.js" type="text/javascript" charset="utf-8"></script
+></html>

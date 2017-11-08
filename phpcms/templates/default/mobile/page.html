@@ -1,0 +1,36 @@
+{template "mobile","header"}
+
+
+<style>
+.lmtys span a{ float:none}
+.content_img{ width:100%}
+.content_img img{ max-width:100%;}
+</style>
+<div style="padding:8px 10px; clear:both;">
+       <div class="lmtys"><span style="font-size:14px;">{$catparent} > {$catname} </span></div>
+
+  <ul class="wzbtlb" style="padding-top:10px;">
+  {pc:content action="category" catid="$catid" order="catid asc"}
+   {if $data}
+  {loop $data $r}
+  <li style="text-align:center; background:#3498db; border-bottom:3px solid #FFF"><a href="{page_url($r['catid'])}" style="color:#FFF">{$r['catname']}</a></li>
+  {/loop}
+  {else}
+  <div class="content_img">
+   {$content}
+   </div>
+  {/if}
+  {/pc}
+
+
+
+
+
+  </ul>
+  
+               <div style="clear:both;"></div>
+  <!--     <DIV id="an_more_${viewid}" class="more" ><a href="javascript:void(0);" onClick="javascript:get_more_${viewid}();">点击查看更多</a></DIV> -->
+<!-- <DIV id="an_load_${viewid}" class="more" style="display:none;">正在加载......</DIV> -->
+</div>
+
+{template "mobile","footer"}

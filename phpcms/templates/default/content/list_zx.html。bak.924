@@ -1,0 +1,78 @@
+{template "content","header"}
+<link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<style type="text/css">
+body {background: url({IMG_PATH}v9/about_bg.png) repeat-x;}
+#header{ height:94px;}
+#header .logo{ padding:0 100px 0 20px;float:left;}
+.log{line-height:24px; height:24px;float:right; font-size:12px}
+.log{color:#c7c5c5; margin-top:40px}
+.log a{color:#6f6f6f;text-decoration: none;}
+.log a:hover{text-decoration: underline;}
+#header .content{width:880px; margin:auto; height:60px;padding:10px 0 0 0}
+#content{width:1200px; margin:auto; padding:80px 0 0 0}
+
+.col-auto li{
+	height: 100px;
+	width: 100%;
+	margin: 20px 0;
+}
+.col-auto .newsList-title{padding-right: 20px;}
+.col-auto li h5 a{font-weight: bold;}
+.left-nav{width:210px; height:770px; padding-top:10px}
+.left-nav h1,.left-nav .content li,.left-nav .content li.cur a,.left-nav .bottom{background: url({IMG_PATH}v9/about_left.png) no-repeat right top}
+.left-nav h1{display:block; height:40px; text-indent:-999px; overflow:hidden}
+.left-nav .content{background: url({IMG_PATH}v9/about_left_bg.png) repeat-y right top; padding-left:44px}
+.left-nav .content li{background-position: right -102px; display:block; height:30px; line-height:30px; font-size:14px}
+.left-nav .content li a{display:block; height:25px; line-height:25px; padding-left:14px; color:#6f6f6f}
+.left-nav .content li.cur a{background-position: left -72px;  font-weight:700; color:#0d4b9b}
+.left-nav .bottom{background-position: right -168px; height:216px}
+.col-auto{ padding:0 25px}
+.col-auto .title{font-size:25px;padding:5px 0 0;background: url({IMG_PATH}uline.gif) repeat-x left bottom; margin-bottom:15px}
+.col-auto .content p{ margin-top:15px; font-size:14px; line-height:25px; color:#6f6f6f}
+.footer{color:#666; line-height:24px;width:920px; margin:auto; text-align:center; padding:12px 0; margin-top:52px; border-top:1px solid #e5e5e5}
+.footer p.info a{color:#666;}
+</style>
+<div id="content">
+	<div class="col-left left-nav">
+    	<h3 style="background-color:#29166f;">{$CATEGORYS[$CAT[parentid]][catname]}</h3><br/>
+    	<ul class="content">
+        	{pc:content action="category" catid="112" num="12" siteid="$siteid" order="listorder ASC"}
+			{loop $data $c}
+			   <li><a  {if $catid == $c[catid]} class="on" style="background-color:#28166f;color:#fff;" {/if} href="{$c['url']}">{$c['catname']}</a></li>
+			    <!--<ul>
+			   {loop subcat($c['catid']) $c2}
+			      <li style="text-indent:2em;"><a href="{$c2['url']}">{$c2['catname']}</a></li>
+				{/loop} 
+                          </ul>-->			
+            {/loop}
+			{/pc}
+        </ul>
+        <div class="nybox">
+			<div style="padding-top:50px;"><a href="http://zhingxinlh.d152.ptzygj.com/index.php?m=content&c=index&a=lists&catid=93"><img src="{IMG_PATH}images/lianxi.jpg" alt="" width=100%></a></div>
+			
+			{pc:block pos="about"}{/pc}
+		</div>
+    </div>
+	
+
+  <div class="col-auto">
+     <div class="content">
+		  <DIV class=nymore>您现在的位置：<A href="{siteid(siteurl)">首页</A> &gt; <A href="{$CATEGORYS[$CAT[parentid]][url]}">{$CATEGORYS[$CAT[parentid]][catname]} </A> &gt; <A href=" {$CATEGORYS[$catid][url]}"> {$CATEGORYS[$catid][catname]}</A>  </DIV>
+           {pc:content action="lists" catid="$catid" num="5" order="id DESC" page="$page"} 
+		   {loop $data   $r}   
+            <li>
+						<a class="newsList-title" href="{$r[url]}" style="float:left;margin-right:5px;"><img src="{thumb($r[thumb],100,100)}" /></a>
+						<h5><a href="{$r[url]}">{$r[title]}</a></h5>
+						<p>{$r[description]}</p>
+			</li>
+  
+		 {/loop}  
+		   
+        	    
+        </div>
+		<div>{$pages}</div>
+	{/pc}	
+    </div>
+ </div>
+{template "content","footer"}

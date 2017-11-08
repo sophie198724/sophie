@@ -1,0 +1,49 @@
+﻿{template "content","header"}
+<script >
+function mouseOver(){
+	console.log('er');
+	document.getElementById("names").style.display="block";
+}
+function mouseOut(){
+	console.log('ew');
+	document.getElementById("names").style.display="none";
+}
+</script>
+<div class="wrapper">
+    <div class="container" id="overview">
+        <h1 class="title" style="color:#28166f">{$CATEGORYS[$catid][catname]}</h1>
+        <div class="product-box">
+        <p></P>
+{pc:content action="lists" catid="$catid" num="12" order="id DESC" moreinfo="1"}
+{loop $data $r}
+		
+           <!--  <div class="i-box" style="width:298px;height:280px;">
+                <a href="{$r['url']}">
+					<img src="{$r['thumb']}" alt="" style="width:100%;height:280px"   onmouseover="mouseOver()" onmouseout="mouseOut()">
+					<div class="span" id="names" style="display:none;width:200px;height:200px;background:#000;">
+						<h2 style="color:red">标题</h2><br/>
+						<h5>摘要</h5><br/>
+						<p>内容</p>
+					</div>
+				</a>
+				
+            </div>-->
+			 <div class="i-box" style="width:298px;height:280px;">
+                <a href="{$r['url']}">
+					<img src="{$r['thumb']}" alt="" style="width:100%;height:280px" >
+					<div class="span">
+						{$r['title']}
+					</div>
+				</a>
+				
+            </div>
+
+{/loop}
+{/pc}           
+                        
+            <div class="clear">{$pages}</div>
+        </div>
+    </div>
+</div>
+<div class="push"></div>
+{template "content","footer"}

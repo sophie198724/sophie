@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" charset="utf-8">
+<meta name = "viewport" content = "width=device-width, minimum-scale=1, maximum-scale=1">
+<title>{$mobile['sitename']}</title>
+<meta name="keywords" content="{$mobile['keywords']}">
+ <meta name="description" content="{$mobile['description']}">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}rester.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}index.css"/>
+		<link type="text/css" href="{CSS_PATH}style1.css" rel="stylesheet"/>
+		<script src="{JS_PATH}jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="{JS_PATH}jquery.event.drag-1.5.min.js"></script>
+       <script type="text/javascript" src="{JS_PATH}jquery.touchSlider.js"></script>
+	</head>
+	<body>
+		<div class="logo">
+			<a href="index.html">
+				<img src="{IMG_PATH}logo.png"/>
+			</a>
+			<a href="index.html">
+			<img src="{IMG_PATH}home.png" class="home"/>
+			</a>
+		</div>
+		<div class="bannar " > 
+		<div class="main_visual">
+	    <div class="flicking_con">
+            {pc:get sql="select * from v9_poster where spaceid=11" return="data" }
+            {loop $data $n $r}
+            <a href="#"><?php echo $n+1; ?></a>
+            {/loop}
+            {/pc}
+	    </div>
+	<div class="main_image">
+		<ul>
+          {pc:get sql="select * from v9_poster where spaceid=11" return="data" }
+          {loop $data $n $r}
+             <?php
+         $str = array();
+         $str =  string2array($r['setting']);
+        ?>
+			<li><span class="img_{$n+1}"><a href="{$str[1]['linkurl']}"><img src="{$str[1]['imageurl']}"/></a></span></li>
+          {/loop}
+          {/pc}
+		</ul>
+		<a href="javascript:;" id="btn_prev"></a>
+		<a href="javascript:;" id="btn_next"></a>
+	</div>
+</div>
+
+		</div>

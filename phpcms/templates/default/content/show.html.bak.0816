@@ -1,0 +1,85 @@
+{template "content","header"}
+<!-- <div class="container" id="overview">
+        <div id="new-sidebar">
+            <h1 class="title">{$CATEGORYS[$catid][catname]}</h1>
+            <div class="logoArea">
+                <div>
+                    <img src="{IMG_PATH}{IMG_PATH}images/logo.png" alt="">
+                </div>
+            </div>
+            <!-- <div class="download">
+            <a href="#" download="name.pdf" class="article_btn article_download_btn" target="_blank">下载</a>
+            <a href="javascript:;" class="article_btn article_print_btn printPage">打印</a>
+            </div> 
+            
+        </div>
+
+        <div class="articleMain">
+           
+            <h1 align="center">{$title}</h1>
+			 <div class="date">
+               {$inputtime}
+
+            </div>
+            
+          
+            <div id="new-page">
+
+
+            <p>{$content}
+</p>
+            
+            </div>
+	 <p class="f14">
+                <strong>上一篇：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a><br />
+                <strong>下一篇：</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
+    </p>	
+        </div>
+<div class="push"></div>
+</div> -->
+<div class="container" id="overview">
+        <div id="new-sidebar">
+            <h1 class="title">{$CATEGORYS[$catid][catname]}</h1>
+            <div class="logoArea">
+                <div>
+                    <img src="{IMG_PATH}images/logo.png" alt="">
+                </div>
+            </div>
+            <div class="download">
+            
+            </div>
+            <div class="contactInfo">
+                <h2>联系我们</h2>
+                <div class="contactInfo">
+                    <p>
+                    西安市碑林区长安北路1号<br>
+                   会展国际旁<br>
+                    联系电话：<br>
+                    029-8XX86666  8XX86665 <br>    
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="articleMain">
+            <div class="date">
+                {$inputtime}
+            </div>
+            <h1>{$title}</h1>
+            
+          
+            <div id="new-page">
+			{if $allow_visitor==1}
+                    <p>{htmrp($content)}</p>
+            </div>
+
+            <p class="f14">
+                <strong>上一篇：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a><br />
+                <strong>下一篇：</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
+    </p>
+        </div>
+
+		<div class="push"></div>
+	</div>
+{template "content","footer"}

@@ -1,0 +1,30 @@
+{template "wap","header"}
+
+	<div class="title mt10 pr">
+	  <h2>最新动态<a href="{list_url(37)}" class="more pa"><span class="hidden">更多</span></a></h2>
+	</div>
+	<div class="products">
+	  <ul>
+{pc:wap action="lists" typeid="37" num="6" order="id DESC" return="info"}
+{loop $info $i}	  
+	    <li>
+		  <a href="{show_url($i[catid],$i[id])}"><img src="{thumb($i[thumb],196,240)}"></a>
+		  <h4>{str_cut($i['title'],26,'')}</h4>
+		  <h6><span></span></h6>
+		</li>
+{/loop}
+{/pc}  		
+	  </ul>
+	</div>
+	<div class="links mt10 oh cb">
+	  <ul class="tc">
+	   <!--  <li><a href="list.html">补水保养</a></li>
+		<li><a href="list.html">身体洗护</a></li>
+		<li><a href="list.html">彩妆香水</a></li>
+		<li><a href="list.html">补水保养</a></li>
+		<li><a href="list.html">身体洗护</a></li>
+		<li><a href="list.html">彩妆香水</a></li> -->
+	  </ul>
+	</div>
+
+{template "wap","footer"}

@@ -1,0 +1,174 @@
+{template "content","header"}
+<link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body {background: url({IMG_PATH}v9/about_bg.png) repeat-x;}
+#header{ height:94px;}
+#header .logo{ padding:0 100px 0 20px;float:left;}
+.log{line-height:24px; height:24px;float:right; font-size:12px}
+.log{color:#c7c5c5; margin-top:40px}
+.log a{color:#6f6f6f;text-decoration: none;}
+.log a:hover{text-decoration: underline;}
+#header .content{width:880px; margin:auto; height:60px;padding:10px 0 0 0}
+#content{width:1200px; margin:auto; }
+.left-nav{width:210px; height:770px; padding-top:10px}
+.left-nav h1,.left-nav .content li,.left-nav .content li.cur a,.left-nav .bottom{background: url({IMG_PATH}v9/about_left.png) no-repeat right top}
+.left-nav h1{display:block; height:40px; text-indent:-999px; overflow:hidden}
+.left-nav .content{background: url({IMG_PATH}sidebar_bg.png) no-repeat left bottom ; padding-left:44px}
+.left-nav .content li{background-position: right -102px; display:block; height:30px; line-height:30px; font-size:14px}
+.left-nav .content li a{display:block; height:25px; line-height:25px; padding-left:14px; color:#6f6f6f}
+.left-nav .content li.cur a{background-position: left -72px;  font-weight:700; color:#0d4b9b}
+.left-nav .bottom{background-position: right -168px; height:216px}
+.col-auto{ padding:0 25px}
+.col-auto .title{font-size:25px;padding:5px 0 0;background: url({IMG_PATH}uline.gif) repeat-x left bottom; margin-bottom:15px}
+.col-auto .content p{ margin-bottom:15px; font-size:14px; line-height:25px; color:#6f6f6f}
+.footer{color:#666; line-height:24px;width:920px; margin:auto; text-align:center; padding:12px 0; margin-top:52px; border-top:1px solid #e5e5e5}
+.footer p.info a{color:#666;}
+.dt img {
+
+  margin: 42px 0 26px 0;
+}
+.dt h1 {
+    font-size: 18px;
+    color: #0e334b;
+}
+.dd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    color: #fff;
+    background: #29166f;
+}
+.dd .dd_p {
+    position: absolute;
+    font-size: 12px;
+    top: 1%;
+    left: 8%;
+    width: 84%;
+    color: #fff;
+}
+</style>
+<div class="ban3">
+    {if $CATEGORYS[$catid][parentid]}
+        <img src="{$CATEGORYS[$CATEGORYS[$catid][parentid]]['image']}"  />
+    {else}
+         <img src="{$CATEGORYS[$catid][image]}">
+    {/if} 
+  </div>
+<div id="content">
+   
+<div class="col-left left-nav">
+    	<h2 style="background-color:#DE2810;">{$CATEGORYS[$CAT[parentid]][catname]}<br>{$CATEGORYS[$CAT[parentid]][catdir]}</h2>
+		<br />
+<!--    	<ul class="content">
+        	{pc:content action="category" catid="104" num="12" siteid="$siteid" order="listorder ASC"}
+			{loop $data $c}
+			   <li><a  {if $catid == $c[catid]} class="on" style="background-color:#DE2810;color:#fff;" {/if}  href="{$c['url']}" >{$c['catname']}</a></li>
+		
+            {/loop}
+			{/pc}
+        </ul>-->
+             	     <style type="text/css">
+*{margin:0; padding:0}
+#nav{width:200px; }
+#nav h5{    height: 40px !important;
+    line-height: 40px !important;
+    margin-bottom: 2px;
+    text-indent: 68px;
+    background: url({IMG_PATH}sidebar_ico.jpg) no-repeat 60px center !important;    font-size: 16px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    padding-left: 0 !important;
+    text-decoration: none;}
+#nav div a{height: 40px !important;
+    line-height: 40px !important;
+    margin-bottom: 2px;
+    text-indent: 55px; display:block;
+    font-size: 16px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    padding-left: 0 !important;
+    text-decoration: none;}
+
+#nav div{display:none; border-top:none}
+</style>
+
+<script type="text/javascript">
+
+$(function(){
+	$("#nav h5").css("cursor","pointer");
+	
+	$("#nav h5").on("click",function(){
+		$(this).next("div").slideToggle(500);
+	})				
+})
+</script>
+<ul class="content" id="nav">
+ <h5>{$CATEGORYS[206][catname]}</h5>
+    <div>
+<a href="{$CATEGORYS[210][url]}">{$CATEGORYS[210][catname]}</a>
+<a href="{$CATEGORYS[229][url]}">{$CATEGORYS[229][catname]}</a>
+<a href="{$CATEGORYS[212][url]}">{$CATEGORYS[212][catname]}</a>
+<a href="{$CATEGORYS[213][url]}">{$CATEGORYS[213][catname]}</a>
+    </div>
+    <h5>{$CATEGORYS[207][catname]}</h5>
+    <div>
+<a href="{$CATEGORYS[214][url]}">{$CATEGORYS[214][catname]}</a>
+<a href="{$CATEGORYS[215][url]}">{$CATEGORYS[215][catname]}</a>
+<a href="{$CATEGORYS[216][url]}">{$CATEGORYS[216][catname]}</a>
+    </div>
+     <h5>{$CATEGORYS[208][catname]}</h5>
+    <div>
+<a href="{$CATEGORYS[217][url]}">{$CATEGORYS[217][catname]}</a>
+<a href="{$CATEGORYS[218][url]}">{$CATEGORYS[218][catname]}</a>
+<a href="{$CATEGORYS[219][url]}">{$CATEGORYS[219][catname]}</a>
+    </div>
+    <h5>{$CATEGORYS[209][catname]}</h5>
+    <div>
+<a href="{$CATEGORYS[220][url]}">{$CATEGORYS[220][catname]}</a>
+<a href="{$CATEGORYS[221][url]}">{$CATEGORYS[221][catname]}</a>
+<a href="{$CATEGORYS[222][url]}">{$CATEGORYS[222][catname]}</a>
+    </div>
+</ul>
+    </div>
+  <div class="col-auto">
+      <DIV class=nymore>当前位置：<a href="{siteurl($siteid)}">首页</a> &gt;<a href="{$CATEGORYS[97][url]}">{$CATEGORYS[$CAT[parentid]][catname]}</a> &gt; {$CATEGORYS[$catid][catname]} </DIV>
+    	    <div class="product-box ">
+              
+{pc:content action="lists" catid="$catid" num="12" order="listorder DESC" moreinfo="1" page="$page"}
+
+{loop $data $r}
+		
+          
+	<div class="i-box" style="width:460px;height:525px; margin:0 5px 0px 0px; overflow: hidden;">
+          <div class="dt" style="position: absolute;z-index: 2;width: 100%;height: 100%;text-align: center; background: #fafafa;"> 
+            <img src="{$r[thumb]}">
+            <h1>{str_cut($r[title],43,'')}</h1>
+ 
+          </div>
+          <div class="dd" >
+          <!--  <p style="font-size:12px;">{str_cut(strip_tags($r[content]),1100,'')}</p>  -->
+		        <p style="font-size:12px;font-family:微软雅黑;padding:0;" class="dd_p">{$r[content]}</p> 
+          </div>
+		   </div>
+      
+
+{/loop}
+  <script>
+      $(document).ready(function(){
+            $('.i-box').hover(function(){
+                $(this).find('.dt').stop().animate({top:-100+'%'},500);
+            },function(){
+                $(this).find('.dt').stop().animate({top:0},500);
+            })
+        })
+        
+  </script>
+           <div class="clear" align="center">{$pages}</div>
+{/pc}
+          </div>
+    </div>
+ </div>
+{template "content","footer"}

@@ -1,0 +1,45 @@
+{template "content","header"}
+<div class="container" id="overview">
+        <div id="new-sidebar">
+            <h1 class="title">{$CATEGORYS[$catid][catname]}</h1>
+            <div class="logoArea">
+                <div>
+                    <img src="{IMG_PATH}images/logo.png" alt="">
+                </div>
+            </div>
+            <div class="download">
+            
+            </div>
+            <div class="contactInfo">
+                <h2>联系我们</h2>
+                <div class="contactInfo">
+                    <p>
+                    西安曲江新区雁南五路1868号曲江影视大厦10层<br/>
+                    联系电话：<br>029-68206165<br>    
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="articleMain">
+            <div class="date">
+                <p align="center">{$inputtime}</p>
+            </div>
+            <h1 align="center">{$title}</h1></br>
+			<h3 align="center">作者:{$username}&nbsp;&nbsp;来源:{$copyfrom}</h3>
+            
+          
+            <div id="new-page">
+                    {$content}
+            </div>
+
+            <p class="f14">
+                <strong>上一篇：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a><br />
+                <strong>下一篇：</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
+           </p>
+        </div>
+
+		<div class="push"></div>
+	</div>
+{template "content","footer"}

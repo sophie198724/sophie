@@ -1,0 +1,47 @@
+{template "content","header"}
+<script >
+function mouseOver(){
+	console.log('er');
+	document.getElementById("names").style.display="block";
+}
+function mouseOut(){
+	console.log('ew');
+	document.getElementById("names").style.display="none";
+}
+</script>
+<div class="wrapper">
+    <div class="container" id="overview">
+        <h1 class="title" style="color:#28166f";>
+        <a href="index.php?m=content&c=index&a=lists&catid=112" style="float:right;">返回上一级</a>
+        <span>{$CATEGORYS[$catid][catname]}</span>
+
+		
+		</h1>
+        <div class="product-box">
+        <p style="z-indent:2em;">{$CATEGORYS[$catid][description]}</p>
+{pc:content action="lists" catid="$catid" num="12" order="id DESC" moreinfo="1" page="$page"}
+
+{loop $data $r}
+		
+          
+			 <div class="i-box" style="width:298px;height:280px;margin-bottom:28px;">
+               
+					<img src="{$r['thumb']}" alt="" style="width:100%;height:210px" >
+					
+					
+						<p align="center">{$r['title']}</p>
+					
+				
+				
+            </div>
+
+{/loop}
+           
+                        
+            <div class="clear" align="center">{$pages}</div>
+{/pc}
+        </div>
+    </div>
+</div>
+<div class="push"></div>
+{template "content","footer"}

@@ -1,0 +1,34 @@
+﻿/* global start */
+/*
+.headerWrapper
+{
+	position:absolute;
+}
+
+.nav
+{	
+	position:absolute;
+}
+*/
+/* global end */
+
+/* scroll menu (2014-4-24) */
+
+.nav
+{
+	height:100%;
+	height:100vh;
+	overflow-y:auto;
+}
+
+.nav .submenuWrapper
+{
+	max-height:1000px;
+}
+
+.stop-scrolling
+{
+	position:fixed;
+	width:100%;
+
+}

@@ -1,0 +1,64 @@
+{template "mobile","header"}
+
+<div style="padding:8px 10px; clear:both;">
+               <div class="lmtys"><span style="font-size:14px;">{$CATEGORYS[$parentid][catname]}&gt;{$catname} </span></div>
+  
+   <img src="/statics/images/a238_01.gif" width="100%" />
+            <?php
+    $i = 1;
+?>
+
+            {pc:content action="lists" catid="$catid" num="18" order="listorder DESC" page="$page"}
+            <?php
+            $data = array_chunk($data , 3);
+            ?>
+
+
+            {loop $data $r}
+            <?php
+$odd = $i % 2 == 0 ? "odd" : "even";
+?>
+                <?php
+                $j = 1;
+                ?>
+               <img src="/statics/images/a238_0<?php echo $j; ?>.gif" width="100%" />
+                {loop $r $rr}
+                <div class="three_{$j} b">
+                 <?php
+                  if($j==1)
+                  {
+                 ?>
+                <a href="{$rr[url]}"><img src="{$rr[thumb]}" style="width: 100%"></a>
+                <?php
+                 }
+                 else
+                 {
+                ?>
+                 <a href="{$rr[url]}"><img src="{$rr[thumb]}" style="width:50%; float:left"></a>
+                <?php
+                
+                  }
+                ?>
+                </div>
+                <?php
+                    $j++;
+                ?>
+                {/loop}
+                <?php
+                    $i++;
+                ?>
+            {/loop}
+            {/pc}
+
+
+            <div class="text-list">
+                <h5 style="border-bottom: solid 3px #656565;margin: 15px auto;font-size: 16px">相关推荐<a class="moret" href="/index.php?m=content&c=index&a=lists2&catid={$catid}">更多</a></h5>
+                {pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page"}
+                {loop $data $r}
+                <div class="text-item" style="width: 49%;float: left;font-size: 14px;line-height: 35px">❁<a href="{$r[url]}">{$r[title]}</a></div>
+                {/loop}
+                {/pc}
+            </div>
+</div>
+
+{template "mobile","footer"}

@@ -1,0 +1,46 @@
+{template "mobile","header"}
+
+<div style="padding:8px 10px; clear:both;">
+               <div class="lmtys"><span style="font-size:14px;">{$CATEGORYS[$parentid][catname]}&gt;{$catname} </span></div>
+  <ul class="wzbtlb" style="padding-top:10px;">
+  <?php
+  if($catid==234)
+  {
+  ?>
+   {pc:get sql="select * from v9_page where catid=262"}
+   {loop $data $r}
+     {$r['content']}
+   {/loop}
+   {/pc}
+  
+ <?php
+  }else
+  {
+ ?>
+  <ul>
+ {pc:mobile action="lists" catid="$catid" order="id DESC" thumb="" moreinfo="1"  return="info" num="10" page="$page" }
+    {loop $info $v}
+   <li style=" margin-bottom:20px; padding-bottom:10px; border-bottom:#CCC dotted 1px">  
+     <div style="float:left; width:40%"> <img src="{$v[thumb]}" style="width: 100%"></div>  
+     <div style="float:right; width:55%; text-align:left">  <h3 style=" font-size:1.2em">{str_cut($v['title'],32)}</h3>
+        <p style="font-size:0.9em">{str_cut($v['description'],80)}</p>
+     </div>
+     <div style="clear:both"></div>
+  </li>
+
+   {/loop}
+   {/pc}
+   
+   </ul>  
+   <div class="pages">{$pages}</div>
+ <?php
+   }
+ ?>
+  </ul>
+  
+               <div style="clear:both;"></div>
+  <!--     <DIV id="an_more_${viewid}" class="more" ><a href="javascript:void(0);" onClick="javascript:get_more_${viewid}();">点击查看更多</a></DIV> -->
+<!-- <DIV id="an_load_${viewid}" class="more" style="display:none;">正在加载......</DIV> -->
+</div>
+
+{template "mobile","footer"}

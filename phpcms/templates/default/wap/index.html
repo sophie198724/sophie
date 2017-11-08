@@ -1,0 +1,36 @@
+{template "wap","header"}
+
+	<div class="title mt10 pr" style="height:55px">
+	  <h2>最新动态<a href="{list_url(39)}" class="more pa"><span class="hidden">更多</span></a></h2>
+	</div>
+
+		<div class="list" style="margin-right: 10px;">
+	  <ul>
+{pc:wap action="lists" typeid="39" num="6" order="inputtime DESC" return="info"}
+ {loop $info $v}	
+ 
+	   
+	
+		 <li style="padding: 10px 0 10px 10px;width: 100%;line-height: 1.0;height: 140px">
+		   <h4><a href="{show_url($v[catid],$v[id],$typeid)}">{str_cut($v['title'],50,'')}</a></h4>
+		  <p style="line-height: 29px;"><a style="color:#888" href="{show_url($v[catid],$v[id],$typeid)}">{$v['description']}</a><span style="float:right;margin-right:30px;font-size: 1.5rem;">{date('Y-m-d',$v[inputtime])}  </span></p>
+		  
+		 </li>
+		
+		  <!-- <h6></h6> -->
+		 
+		 
+{/loop}		
+		
+	  </ul>
+	 <div class="pages" style="text-align:center;">{$pages}</div>
+{/pc}
+	</div>
+	
+	
+	
+	<div class="links mt10 oh cb">
+	  
+	</div>
+
+{template "wap","footer"}

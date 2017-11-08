@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="SKYPE_TOOLBAR" content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
+<link rel= "shortcut icon" media="all" type="image/x-icon" href="/favicon.ico" />
+<link rel= "icon" media="all" type="image/vnd.microsoft.icon" href="/favicon.ico" /><title>陕西中信蓝海集团有限公司</title>
+<link href="{CSS_PATH}css/jquery.swiper.css" rel="stylesheet" type="text/css">
+<link href="{CSS_PATH}css/easydropdown.css" rel="stylesheet" type="text/css">
+<link href="{CSS_PATH}css/reset.css" rel="stylesheet" type="text/css">
+<link href="{CSS_PATH}css/style.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+    <link href="{CSS_PATH}css/style_1024.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="{CSS_PATH}css/style_1024.css" rel="stylesheet" type="text/css" media="screen and (min-width:960px)" />
+<link href="{CSS_PATH}css/style_768.css" rel="stylesheet" type="text/css" media="screen and (max-width:959px) and (min-width:768px)" />
+<link href="{CSS_PATH}css/style_320.css" rel="stylesheet" type="text/css" media="screen and (max-width:767px)" />
+
+
+<link href="{CSS_PATH}css/style_mobile_nav.css" rel="stylesheet" type="text/css" media="screen and (max-width:767px)" />
+
+
+<link href="{CSS_PATH}css/style_1024.css" rel="stylesheet" type="text/css" media="print" />
+<link href="{CSS_PATH}css/print.css" rel="stylesheet" type="text/css" media="print" />
+
+<script type="text/javascript" src="{JS_PATH}js/jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}js/jquery-ui.min.js"></script>
+
+
+
+<script src="{JS_PATH}js/common.js"></script>
+
+<script type="text/javascript" src="{JS_PATH}js/jquery.jslides.js"></script>
+
+
+
+
+
+<script src="{JS_PATH}js/highcharts.js"></script>
+<script src="{JS_PATH}js/exporting.js"></script>
+<script src="{JS_PATH}js/grid.js"></script>
+<script src="{JS_PATH}js/appear_animate.js"></script>
+<script src="{JS_PATH}js/jquery.redirect.js"></script>
+
+<script src="{JS_PATH}js/jquery.easydropdown.js"></script>
+<script src="{JS_PATH}js/jquery.scrollto.js"></script>
+<script src="{JS_PATH}js/jquery.cycle2.min.js"></script>
+<script src="{JS_PATH}js/jquery.swiper-2.0.min.js"></script>
+<script src="{JS_PATH}js/jquery.swiper.hashnav.min.js"></script>
+<script src="{JS_PATH}js/jquery.appear.js"></script>
+<!--<script type="text/javascript" src="{JS_PATH}js/addthis_widget.js"></script>-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=IOlGNMXfXIpDPjmbGu5tb9YWCkS371li"></script>
+
+<style type="text/css">
+
+#home.container{position:relative;}
+
+#home .text{
+	position:absolute;
+	left:496px;
+	top:176px;
+}
+#home .title{
+	font-size:40px;
+	font-weight:400;
+	color:#ff6600;
+	margin-bottom:5px;
+}
+#home .paragraph{
+	font-size:21px;
+	line-height:26px;
+	font-weight:400;
+	color:#666666;
+}
+#home .paragraph span{font-weight:600;}
+</style>
+<script>
+
+$(function(){
+	/*
+	$("#desktopBanner").cycle({
+		fx:"scrollLeft"
+	});
+	
+	$("#mobileBanner").cycle({
+		fx:"scrollUp"
+	});
+	
+	$(window).bind("resize",function(){
+		window.location.href=window.location.href;	
+	});
+	*/
+})
+</script>
+</head>
+<body>
+<script type=text/javascript src="{JS_PATH}js/beacon_group.js"></script> 
+<script type=text/javascript>var dmtrack_c='{-}'; var dmtrack_pageid='7b8b51feac147de71470101296'; sk_dmtracking();</script> 
+<noscript><img src="Picture/b.jpg" width="1" height="1" style="display:none"></noscript>
+
+<script>
+  	 if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+window.location.href="http://zhingxinlh.d152.ptzygj.com/index.php?m=wap";
+}else if(/iPad/i.test(navigator.userAgent)){
+              	 window.location.href="http://zhingxinlh.d152.ptzygj.com/index.php?m=wap"
+}
+  </script>
+<!--头部开始-->
+<div class="headerWrapper">
+
+	<div class="header clearfix">
+		<div class="logo">
+        	<a href="#"><img src="{IMG_PATH}images/logo.png"></a>
+        </div>
+        <div class="fright">
+            <div class="search"> 
+                <div class="searchWrapper">
+                <form class="jqtransform" method="get" action="{APP_PATH}index.php" name="subSearchForm">
+				    <input type="hidden" name="m" value="search"/>
+				<input type="hidden" name="c" value="index"/>
+				<input type="hidden" name="a" value="init"/>
+				<input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+				<input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+                <input type="text" class="text" name="q" id="q"/><input type="submit" value="搜 索" class="button" />
+				</form>
+                </div>
+            </div>
+          
+		</div>
+    </div>
+ 
+</div>
+<!--头部结束-->
+
+
+
+<!--导航开始-->
+<div class="nav">
+	<ul class="menu">
+        <li><a href="{siteurl($siteid)}">首页</a></li>
+    	<li><span>集团概况</span>
+        	<div class="submenuWrapper">
+            	<div class="submenuContainer">
+                	<ul class="submenu">
+	                	<li><a href="{$CATEGORYS[43][url]}">公司简介</a></li> 
+        	        	<li><a href="{$CATEGORYS[59][url]}">企业文化</a></li>
+            	    	<li><a href="{$CATEGORYS[52][url]}">组织架构</a></li>
+					</ul>
+                    <ul class="submenu">
+                        
+					</ul>
+				</div>          
+			</div>
+		</li>
+        
+		<li><span>项目管理</span>
+        	<div class="submenuWrapper">
+            	<div class="submenuContainer">
+                	<ul class="submenu">
+					    <li><a href="{$CATEGORYS[63][url]}">招标公告</a></li>
+						<li><a href="{$CATEGORYS[66][url]}">团队风采</a></li>
+						<li><a href="{$CATEGORYS[67][url]}">资质展示</a></li>
+	                	<li><a href="{$CATEGORYS[77][url]}">关于我们</a></li>
+                       
+                   		
+						
+					</ul>       
+                    <ul class="submenu">
+		                <li><a href="{$CATEGORYS[78][url]}">项目业绩</a></li>
+                        <li><a href="{$CATEGORYS[79][url]}">中标公示</a></li>
+                        <li><a href="{$CATEGORYS[80][url]}">业务介绍</a></li>
+						<li><a href="{$CATEGORYS[81][url]}">联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</li>
+        
+        <li><span>青年创业管理</span>
+        	<div class="submenuWrapper">
+            	<div class="submenuContainer">
+                	<ul class="submenu">
+                        <li><a href="{$CATEGORYS[83][url]}">关于我们</a></li>
+                        <li><a href="{$CATEGORYS[86][url]}">资质展示</a></li>
+                        <li><a href="{$CATEGORYS[87][url]}">团队风采</a></li>
+                        <li><a href="{$CATEGORYS[88][url]}">新闻动态</a></li>
+					</ul>
+                    <ul class="submenu">
+	                    <li><a href="{$CATEGORYS[89][url]}">联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+        </li>
+        <li><a href="http://www.chunhelvke.webportal.cc/">{$CATEGORYS[90][catname]}</a></li>
+        <li><a href="{$CATEGORYS[91][url]}">{$CATEGORYS[91][catname]}</a></li>
+        <li><a href="{$CATEGORYS[92][url]}">{$CATEGORYS[92][catname]}</a></li>
+        <li><a href="{$CATEGORYS[93][url]}">{$CATEGORYS[93][catname]}</a></li>
+    <div class="submenuWrapperBg"></div>
+	</ul>
+</div>
+
+
+<!--导航结束-->

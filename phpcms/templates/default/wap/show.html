@@ -1,0 +1,14 @@
+{template "wap","min_header"}
+<div class="content">
+	  <h2>{$title}</h2>
+	  <h6>{date('Y-m-d',strtotime($inputtime))} </h6>
+	  
+	 <div class="article mt10" style="text-indent:2em ">
+       <!--  {str_cut(strip_tags($content),"","")}  -->
+		<!-- {strip_tags($content)} -->
+		{$content}
+		
+       </div>
+     <div>{$pages}</div>
+</div>
+{template "wap","footer"}

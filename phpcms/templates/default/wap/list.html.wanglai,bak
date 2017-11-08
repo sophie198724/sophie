@@ -1,0 +1,32 @@
+{template "wap","min_header"}
+	
+	<div class="list">
+	  <ul>
+ {pc:wap action="lists" typeid="$typeid" num="4" order="id DESC" return="info" page="$_GET[page]"}
+ {loop $info $v}	
+	   
+		{if $v[thumb]}
+		 <li>
+		  <a href="{show_url($v[catid],$v[id],$typeid)}"><img src="{$v[thumb]}" width="196" height="240"></a>
+	
+		  <h4><a href="{show_url($v[catid],$v[id],$typeid)}">{str_cut($v['title'],50,'')}</a></h4>
+		  <p style="line-height: 29px;"><a style="color:#888" href="{show_url($v[catid],$v[id],$typeid)}">{$v['description']}</a></p>
+		  </li>
+		 {/if}
+		 {if !$v[thumb]}
+		 <li style="padding: 10px 0 10px 10px;width: 100%;line-height: 1.0;height: 140px">
+		   <h4><a href="{show_url($v[catid],$v[id],$typeid)}">{str_cut($v['title'],50,'')}</a></h4>
+		  <p style="line-height: 29px;"><a style="color:#888" href="{show_url($v[catid],$v[id],$typeid)}">{$v['description']}</a></p>
+		 </li>
+		 {/if}
+		  <!-- <h6></h6> -->
+		 
+		 
+{/loop}		
+		
+	  </ul>
+	 <div class="pages" style="text-align:center;">{$pages}</div>
+{/pc}
+	</div>
+	
+{template "wap","min_footer"}	

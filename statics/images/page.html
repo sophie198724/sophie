@@ -1,0 +1,27 @@
+{template "mobile","header"}
+{if $catid==115}
+<div style="padding:8px 10px; clear:both;">
+  <div class="lmtys"><span style="font-size:14px;">当前位置：首页 &gt; {$CATEGORYS[$catid][catname]}</span></div>
+  <ul class="wzbtlb" style="padding-top:10px;">
+		{loop subpage($catid)  $s}
+		
+			 <li style="float:left; width:42%; padding: 4%; text-align:center;"><a href="{$s[url]}"><img src="http://zhingxinlh.d152.ptzygj.com/uploadfile/2016/1017/20161017102526202.jpg" width="100%"><br> {$s[catname]}</a></li>		  
+		{/loop}
+
+  </ul>
+              
+</div>
+{else}
+
+<div style="padding:8px 10px; clear:both;">
+    <div class="lmtys"><span style="font-size:14px;">当前位置：首页 &gt;{$title}</span></div>
+  <div>
+
+    <div class="nrys"><p>
+	{$content}
+	</p></div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+{/if}
+{template "mobile","footer"}

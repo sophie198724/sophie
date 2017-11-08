@@ -1,0 +1,104 @@
+﻿body{overflow:visible;}
+.headerWrapper{
+	position:relative;
+}
+.nav{
+	position:relative;
+	top:0px;
+}
+.wrapper{
+	position:relative;
+	padding-top:0px;
+	margin-bottom:0px;
+}
+.push{display:none}
+
+.footerWrapper
+{
+	clear:both;
+	page-break-before:always;
+}
+
+/* GridBlock */
+
+.gridWrapper
+{
+	position:static;
+}
+
+.gridBlock
+{
+	height:auto;
+}
+
+.gridBlock .desc
+{
+	position:static!important;
+	display:block;
+	margin-top:280px;
+	width:318px;
+	padding:29px 12px;
+	height:900px;
+}
+
+.gridBlock .desc .title
+{
+	font-size:24px;
+	margin-bottom:0;
+	width:auto;
+}
+.gridBlock .desc .subTitle
+{
+	line-height:24px;
+	width:auto;
+}
+
+.gridBlock .captionWrapper
+{
+	top:185px;
+}
+
+.gridBlock .desc .closeBtn
+{
+	display:none;
+}
+
+/* GridBlock Page */
+
+#businesses .gridBlock .desc
+{
+	height:400px;
+}
+
+#leadership .gridBlock .desc
+{
+	height:600px;
+}
+
+#leadership .gridBlock .captionWrapper
+{
+	top:215px;
+}
+
+.printBreak
+{
+	clear:both;
+	page-break-after:always;
+}
+
+#sustainability .gridBlock .desc
+{
+	height:450px;
+}
+
+/* faq */
+#faqs .groupContent, .accordion2 .groupContent, .accordion .a
+{
+	display:block!important;
+}
+
+#faqs .row
+{
+	background-position:0 -17px;
+
+}

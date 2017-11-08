@@ -1,0 +1,22 @@
+{template "mobile","header"}
+
+<div style="padding:8px 10px; clear:both;">
+            <div class="lmtys"><span style="font-size:14px;">{$CATEGORYS[$parentid][catname]}&gt;{$catname} </span></div>
+  <ul class="wzbtlb" style="padding-top:10px;">
+  {pc:mobile action="lists" catid="$catid" num="8" order="id DESC" return="info" page=$page}
+	
+   {loop $info $v}
+      <li><span style="float:left"><img src="images/index_13.png" width="6" height="9"> <a href="{show_url($v[catid],$v[id])}">{str_cut($v['title'],36,'')}</a></span>{date("Y-m-d",$v[inputtime])}</li>
+	  {/loop}
+	
+	{/pc}
+	   <div class="pages">{$pages}</div>
+
+  </ul>
+  
+               <div style="clear:both;"></div>
+  <!--     <DIV id="an_more_${viewid}" class="more" ><a href="javascript:void(0);" onClick="javascript:get_more_${viewid}();">点击查看更多</a></DIV> -->
+<!-- <DIV id="an_load_${viewid}" class="more" style="display:none;">正在加载......</DIV> -->
+</div>
+
+{template "mobile","footer"}

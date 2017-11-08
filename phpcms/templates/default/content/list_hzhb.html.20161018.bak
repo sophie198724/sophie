@@ -1,0 +1,67 @@
+{template "content","header"}
+
+<link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body {background: url({IMG_PATH}v9/about_bg.png) repeat-x;}
+#header{ height:94px;}
+#header .logo{ padding:0 100px 0 20px;float:left;}
+.log{line-height:24px; height:24px;float:right; font-size:12px}
+.log{color:#c7c5c5; margin-top:40px}
+.log a{color:#6f6f6f;text-decoration: none;}
+.log a:hover{text-decoration: underline;}
+#header .content{width:880px; margin:auto; height:60px;padding:10px 0 0 0}
+#content{width:1200px; margin:auto;}
+.left-nav{width:210px; height:770px; padding-top:10px}
+.left-nav h1,.left-nav .content li,.left-nav .content li.cur a,.left-nav .bottom{background: url({IMG_PATH}v9/about_left.png) no-repeat right top}
+.left-nav h1{display:block; height:40px; text-indent:-999px; overflow:hidden}
+.left-nav .content{background: url({IMG_PATH}sidebar_bg.png) no-repeat left bottom ; padding-left:44px}
+.left-nav .content li{background-position: right -102px; display:block; height:30px; line-height:30px; font-size:14px}
+.left-nav .content li a{display:block; height:25px; line-height:25px; padding-left:14px; color:#6f6f6f}
+.left-nav .content li.cur a{background-position: left -72px;  font-weight:700; color:#0d4b9b}
+.left-nav .bottom{background-position: right -168px; height:216px}
+.col-auto{ padding:0 25px}
+.col-auto .title{font-size:25px;padding:5px 0 0;background: url({IMG_PATH}uline.gif) repeat-x left bottom; margin-bottom:15px}
+.col-auto .content p{ margin-bottom:15px; font-size:14px; line-height:25px; color:#6f6f6f}
+.footer{color:#666; line-height:24px;width:920px; margin:auto; text-align:center; padding:12px 0; margin-top:52px; border-top:1px solid #e5e5e5}
+.footer p.info a{color:#666;}
+</style>
+<div style="display:block;margin-top:68px;height:auto">
+   
+           <img src="{$CATEGORYS[93]['image']}" width="100%" height="auto">
+  
+  </div>
+<div id="content">
+   
+	<div class="col-left left-nav">
+    	<h3 style="background-color:#29166f;" align="center">{$CATEGORYS[$CAT[parentid]][catname]}<br>{$CATEGORYS[$CAT[parentid]][description]}</h3><br/>
+    	<ul class="content">
+        	{pc:content action="category" catid="93" num="12" siteid="$siteid" order="listorder ASC"}
+			{loop $data $c}
+			   <li><a {if $catid == $c[catid]} class="on" style="background-color:#28166f;color:#fff;" {/if} href="{$c['url']}">{$c['catname']}</a></li>
+            {/loop}
+			{/pc}
+        </ul>
+       
+    </div>
+  <div class="col-auto">
+ 
+   
+    	<DIV class=nymore>当前位置：<a href="{siteurl($siteid)}">首页</a> &gt;<a href="{$CATEGORYS[158][url]}">{$CATEGORYS[$CAT[parentid]][catname]}</a> &gt; {$CATEGORYS[$catid][catname]} </DIV>
+        <div class="content" style="margin-top:50px;">
+					
+
+					
+					<ul>
+					{pc:content action="lists" catid="169"  siteid="$siteid" order="listorder ASC"}
+					{loop $data $v}
+
+                    <li style="float:left;margin:10px 20px;width:160px;height:81px;text-align:center;list-style:none;"><img src="{$v[thumb]}" width="160" height="51"/><div style="margin-top:10px;font-size:14px;">{$v[title]}</div></li>
+
+					{/loop}
+					</ul>
+					{/pc}
+				</div>
+        </div>
+    </div>
+ </div>
+{template "content","footer"}

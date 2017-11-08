@@ -1,0 +1,28 @@
+<div class="footerWrapper">
+	<div class="footer">
+    	<div class="logo">
+        	<a href="#"><img src="{IMG_PATH}images/logo_footer_03.png"></a>
+        </div>
+        <div class="sitemap">
+        	<div class="col1">
+				
+                <ul>
+                	<li style="margin-left: 130px;"><a href="http://wpa.qq.com/msgrd?v=3&uin=3403713830&site=qq&menu=yes"><img src="{IMG_PATH}images/qq_06.png"></a></li>
+                          <!--<li><img src="{IMG_PATH}images/qq_08.png"></li>
+                          <li><img src="{IMG_PATH}images/qq_10.png"></li>-->
+                	
+                </ul>
+            </div>
+			<div class="col2">
+				<img src="{IMG_PATH}images/erweima_03.png">
+            </div>
+        
+        
+        </div>
+        <hr />
+        <div class="copyright">
+        	{pc:block pos="footer"}{/pc}
+        
+		</div>
+    </div>
+</div>

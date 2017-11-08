@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content=" LiYuxi" />
+<meta name="Copyright" content="" />
+<meta name="Keywords" content="">   
+<meta name="Description" content="">   
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>中信蓝海</title>
+<script type="text/javascript" src="{JS_PATH}wap/jquery.min.js"></script>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="{CSS_PATH}wap/styles.css" type="text/css">
+<script type="text/javascript" src="{JS_PATH}wap/jquery.min.js"></script>
+</head>
+<body>
+  <div class="wrap bc">
+    <div class="title tc pr top">
+	  <a href="{WAP_SITEURL}"><span class="back-btn"></span></a>中信蓝海
+	  <div class="nav-btn">
+	    <ul class="pa">
+	        <li><a href="/index.php?m=wap&siteid=1&a=show&catid=58&typeid=36&id=34">公司概况</a></li>
+	        <li><a href="/index.php?m=wap&c=index&a=lists&typeid=38">青创管理</a></li>
+			<li><a href="/index.php?m=wap&c=index&a=lists&typeid=39">集团新闻</a></li>
+			<li><a href="/index.php?m=wap&c=index&a=lists&typeid=37">项目业绩</a></li>
+			<li><a href="/index.php?m=wap&siteid=1&a=show&catid=57&typeid=40&id=33">联系我们</a></li>
+	    </ul>
+	  </div>
+	</div>
